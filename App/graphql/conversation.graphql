@@ -1,0 +1,14 @@
+query conversations {
+  conversation {
+    id
+    status
+  }
+}
+
+subscription conversationAdded {
+  conversation_mutated {
+    data {
+      id
+    }
+  }
+}
