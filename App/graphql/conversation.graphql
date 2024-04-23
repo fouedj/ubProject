@@ -1,14 +1,41 @@
-query conversations {
-  conversation {
+query Conversations($filter: conversations_filter) {
+  conversations(filter: $filter) {
+    date_updated
     id
-    status
+    senderName
+    receiverName
   }
 }
-
+query users {
+  users {
+    id
+    firstname
+    lastname
+  }
+}
+query Messages($filter: messages_filter) {
+  messages(filter: $filter) {
+    content
+    id
+    conversation {
+      id
+      status
+    }
+  }
+}
 subscription conversationAdded {
-  conversation_mutated {
+  conversations_mutated {
     data {
       id
     }
+  }
+}
+
+mutation Create_messages_item($data: create_messages_input!) {
+  create_messages_item(data: $data) {
+    id
+    status
+
+    content
   }
 }

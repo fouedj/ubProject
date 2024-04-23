@@ -2,13 +2,13 @@ import {Platform, StyleSheet} from 'react-native';
 import colors from './colors';
 import {DimensionScreen} from '../config/constants';
 const mainStyles = StyleSheet.create({
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center',
+  content: {
+    backgroundColor: '#ffffff',
     flex: 1,
-    backgroundColor: 'white',
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#f5f5f5',
   },
   cardShadow: {
     borderRadius: 8,
